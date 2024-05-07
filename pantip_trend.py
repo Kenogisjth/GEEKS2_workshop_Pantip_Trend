@@ -34,10 +34,10 @@ for url in links:
 driver.quit()
 
 pantip_trend = pd.DataFrame({
-    "วันที่และเวลาที่ข้อมูลถูกดึงมาเก็บไว้": pd.Timestamp.now().strftime('%Y-%m-%d %X'),
+    "Date Serv": pd.Timestamp.now().strftime('%Y-%m-%d %X'),
     "URL": links,
-    "หัวข้อกระทู้": title_list,
-    "Username ของผู้ตั้งกระทู้": username_list
+    "Topic": title_list,
+    "Username Owner": username_list
     
 })
 
