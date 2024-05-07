@@ -1,20 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # HW
-
-# In[1]:
-
-
 from selenium import webdriver
-from selenium.webdriver.common.by import By 
+from selenium.webdriver.common.by import By
 import numpy as np
 import pandas as pd
+import sqlalchemy as sa
 from time import sleep
-
-
-# In[2]:
-
 
 options = webdriver.ChromeOptions()
 options.add_argument("--headless=new")
@@ -29,12 +18,6 @@ for item in alist:
     links.append(item.get_attribute("href"))
 
 links = list(np.unique(np.array(links)))
-print(len(links))
-print(links)
-
-
-# In[5]:
-
 
 title_list = []
 username_list = []
@@ -50,16 +33,16 @@ for url in links:
 
 driver.quit()
 
-
-# In[6]:
-
-
-df = pd.DataFrame({
+pantip_trend = pd.DataFrame({
     "วันที่และเวลาที่ข้อมูลถูกดึงมาเก็บไว้": pd.Timestamp.now().strftime('%Y-%m-%d %X'),
     "URL": links,
     "หัวข้อกระทู้": title_list,
     "Username ของผู้ตั้งกระทู้": username_list
     
 })
-df
 
+conn_str = f"mysql+pymysql://root:password@localhost:3306/de_inter"
+engine = sa.create_engine(conn_str)
+conn = engine.connect()
+pantip_trend.to_sql("pantip_trend", conn, index=None, if_exists="append")
+conn.close()

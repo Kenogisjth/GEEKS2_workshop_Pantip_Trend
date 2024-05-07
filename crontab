@@ -1,0 +1,1 @@
+0 * * * * cd /pantip_trend_cronjob && /usr/local/bin/python pantip_trend.py >> cron.log 2>&1
