@@ -41,7 +41,7 @@ pantip_trend = pd.DataFrame({
     
 })
 
-conn_str = f"mysql+pymysql://root:password@localhost:3306/de_inter"
+conn_str = f"mysql+pymysql://root:password@host.docker.internal:3306/de_inter"
 engine = sa.create_engine(conn_str)
 conn = engine.connect()
 pantip_trend.to_sql("pantip_trend", conn, index=None, if_exists="append")
