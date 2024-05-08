@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import By 
 import numpy as np
 import pandas as pd
 import sqlalchemy as sa
@@ -46,6 +46,7 @@ pantip_trend = pd.DataFrame({
     "Username Owner": username_list
     
 })
+pantip_trend
 
 conn_str = "mysql+pymysql://root:password@host.docker.internal:3306/de_inter"
 engine = sa.create_engine(conn_str)
