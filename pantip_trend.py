@@ -40,7 +40,7 @@ for url in links:
 driver.quit()
 
 pantip_trend = pd.DataFrame({
-    "Date Serv": pd.Timestamp.now().strftime('%Y-%m-%d %X'),
+    "Date Serv": pd.Timestamp.now(tz='Asia/Bangkok').strftime('%Y-%m-%d %X'),
     "URL": links,
     "Topic": title_list,
     "Username Owner": username_list
