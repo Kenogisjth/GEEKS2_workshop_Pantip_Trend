@@ -38,7 +38,7 @@ docker run --name pantip_trend_test -it -d pantip_trend:v1.0
 cat cron.log
 ```
 
-## run pipline
+## run pipeline
 ```
 python pantip_trend.py
 ```
