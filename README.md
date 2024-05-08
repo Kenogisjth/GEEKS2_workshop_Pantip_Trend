@@ -10,9 +10,19 @@ https://www.python.org/downloads/
 pip install pipenv
 ```
 
+## create shell
+```
+pipenv shell --python ~~python path~~
+```
+
 ## install package
 ```
 pipenv install pandas pymysql sqlalchemy jupyterlab
+```
+
+## run jupyter lab
+```
+jupyter lab
 ```
 
 ## build docker
