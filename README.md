@@ -2,9 +2,7 @@
 
 ## install package
 ```
-function test() {
-  console.log("pipenv install pandas pymysql sqlalchemy jupyterlab");
-}
+pipenv install pandas pymysql sqlalchemy jupyterlab
 ```
 
 ## build docker
