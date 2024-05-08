@@ -15,7 +15,7 @@ pipenv shell --python ~~python path~~
 
 ## install package
 ```
-pipenv install pandas pymysql sqlalchemy jupyterlab
+pipenv install pandas pymysql sqlalchemy selenium jupyterlab
 ```
 
 ## run jupyter lab
