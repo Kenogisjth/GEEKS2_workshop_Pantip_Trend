@@ -1,5 +1,15 @@
 # GEEKS2_workshop_Pantip_Trend
 
+## install python and pip
+```
+https://www.python.org/downloads/
+```
+
+## install pipenv
+```
+pip install pipenv
+```
+
 ## install package
 ```
 pipenv install pandas pymysql sqlalchemy jupyterlab
