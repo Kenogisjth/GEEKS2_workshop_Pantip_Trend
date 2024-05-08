@@ -7,6 +7,12 @@ from time import sleep
 
 options = webdriver.ChromeOptions()
 options.add_argument("--headless=new")
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-gpu')
+options.add_argument('--disable-setuid-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument("--start-maximized")
+options.add_argument("--window-size=1920,1080")
 driver = webdriver.Chrome(options = options)
 
 driver.get("https://pantip.com/forum/lumpini")
@@ -41,7 +47,7 @@ pantip_trend = pd.DataFrame({
     
 })
 
-conn_str = f"mysql+pymysql://root:password@host.docker.internal:3306/de_inter"
+conn_str = "mysql+pymysql://root:password@host.docker.internal:3306/de_inter"
 engine = sa.create_engine(conn_str)
 conn = engine.connect()
 pantip_trend.to_sql("pantip_trend", conn, index=None, if_exists="append")
