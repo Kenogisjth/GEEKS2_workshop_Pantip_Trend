@@ -46,7 +46,7 @@ pantip_trend = pd.DataFrame({
     "Username Owner": username_list
     
 })
-pantip_trend
+pantip_trend.to_csv("pantip_trend.csv", index=False)
 
 conn_str = "mysql+pymysql://root:password@host.docker.internal:3306/de_inter"
 engine = sa.create_engine(conn_str)
